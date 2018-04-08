@@ -44,6 +44,7 @@ public class HelloController {
 
     @RequestMapping("/list")
     public JSONResult UserList(){
+        //git提交
         List<Users> list = usersService.getListUsers(1);
         redisOperator.set("ListJson", JsonUtils.objectToJson(list));
         return JSONResult.ok(redisOperator.get("ListJson"));
